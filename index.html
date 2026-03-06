@@ -162,23 +162,16 @@
       }
     }
 
-    .consulting-badge {
-      background: var(--text-main);
-      color: var(--bg-color);
-      padding: 1.5rem;
+    .headshot {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      background-color: var(--text-main);
+      border: var(--border-thin);
       margin-bottom: 2rem;
-    }
-
-    .consulting-badge h3 {
-      color: var(--accent-red);
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .consulting-badge p {
-      font-size: 0.95rem;
-      margin-bottom: 0;
+      object-fit: cover;
+      /* If you want it grayscale to match the vibe: */
+      /* filter: grayscale(100%) contrast(120%); */
     }
 
     .contact-list {
@@ -250,12 +243,7 @@
       <!-- Sidebar Area -->
       <aside class="sidebar">
         
-        <div class="consulting-badge">
-          <h3>Data & Consulting</h3>
-          <p>
-            Available for consulting and data science engagements. Expertise in <strong>causal inference, econometric forecasting, R, and Python.</strong> Let's talk about extracting actionable insights from your data.
-          </p>
-        </div>
+        <img src="placeholder.jpg" alt="Osman Keshawarz" class="headshot">
 
         <h2>Contact</h2>
         <ul class="contact-list">
