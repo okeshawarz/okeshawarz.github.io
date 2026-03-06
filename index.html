@@ -3,121 +3,271 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Omid Keshawarz | Economist</title>
+  <title>Osman Keshawarz | Political Economy & Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Using Playfair Display for that heavy, editorial Jacobin serif, and Inter for clean data/tech sans-serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      color-scheme: light;
-      --text: #1f2933;
-      --muted: #52606d;
-      --background: #f7f8fa;
-      --surface: #ffffff;
-      --accent: #3e4c59;
-      --border: #d9e2ec;
+      --bg-color: #f7f6f2; /* Newsprint off-white */
+      --text-main: #111111; /* Harsh black */
+      --accent-red: #e31919; /* Jacobin striking red */
+      --border-thick: 4px solid #111111;
+      --border-thin: 1px solid #111111;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: "Georgia", "Times New Roman", serif;
-      color: var(--text);
-      background: var(--background);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
       line-height: 1.6;
-    }
-
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 3rem;
-    }
-
-    header,
-    section {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    h1,
-    h2 {
-      margin-top: 0;
-      color: var(--accent);
-      font-weight: 600;
-      line-height: 1.2;
-    }
-
-    h1 {
-      margin-bottom: 0.25rem;
-      font-size: 2rem;
-    }
-
-    h2 {
-      margin-bottom: 0.75rem;
-      font-size: 1.25rem;
-    }
-
-    .subtitle {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 1.2rem;
-    }
-
-    p {
-      margin: 0 0 0.75rem;
-    }
-
-    p:last-child {
-      margin-bottom: 0;
+      padding: 2rem 1rem;
     }
 
     a {
-      color: #102a43;
+      color: var(--text-main);
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent-red);
+      transition: all 0.2s ease;
+    }
+
+    a:hover {
+      background-color: var(--accent-red);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Editorial Header */
+    header {
+      border-bottom: var(--border-thick);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+
+    .site-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--accent-red);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 0.5rem;
+    }
+
+    .affiliation {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #555;
+      margin-top: 0.25rem;
+    }
+
+    /* Main Layout */
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .layout {
+        grid-template-columns: 3fr 1fr; /* Left: Main content, Right: Sidebar */
+      }
+    }
+
+    /* Typography for sections */
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      border-bottom: var(--border-thin);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+    }
+
+    h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+    }
+
+    /* Lists */
+    .paper-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .paper-list li {
+      margin-bottom: 1.5rem;
+    }
+
+    .paper-title {
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+
+    .paper-meta {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .paper-links {
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    /* Sidebar / Consulting */
+    .sidebar {
+      border-top: var(--border-thick);
+      padding-top: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .sidebar {
+        border-top: none;
+        border-left: var(--border-thin);
+        padding-top: 0;
+        padding-left: 2rem;
+      }
+    }
+
+    .consulting-badge {
+      background: var(--text-main);
+      color: var(--bg-color);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .consulting-badge h3 {
+      color: var(--accent-red);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .consulting-badge p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    .contact-list {
+      list-style: none;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <main class="container">
+
+  <div class="container">
     <header>
-      <h1>Omid Keshawarz</h1>
-      <p class="subtitle">Economist</p>
-      <p>
-        I study applied microeconomics, with interests in labor markets, public economics,
-        and policy evaluation.
-      </p>
+      <div class="site-title">Osman Keshawarz</div>
+      <div class="site-subtitle">Assistant Professor of Labor Economics</div>
+      <div class="affiliation">University of Hawaiʻi–West Oʻahu</div>
     </header>
 
-    <section aria-labelledby="research-interests">
-      <h2 id="research-interests">Research Interests</h2>
-      <ul>
-        <li>Labor economics</li>
-        <li>Public policy and taxation</li>
-        <li>Development and inequality</li>
-      </ul>
-    </section>
+    <div class="layout">
+      <!-- Main Content Area -->
+      <main>
+        <section aria-labelledby="bio" style="margin-bottom: 3rem;">
+          <p>
+            I am a labor economist specializing in political economy, public policy, and the dynamics of housing and labor markets. My research leverages empirical microeconomics and causal inference to understand how policy shocks shape inequality.
+          </p>
+          <p>
+            Beyond academia, I apply econometric modeling, data science, and advanced statistical analysis to consulting projects, helping organizations make sense of complex economic data.
+          </p>
+        </section>
 
-    <section aria-labelledby="working-papers">
-      <h2 id="working-papers">Working Papers</h2>
-      <ul>
-        <li><strong>Project in progress:</strong> The impact of policy shocks on household labor supply.</li>
-        <li><strong>Project in progress:</strong> Measuring inequality dynamics across local labor markets.</li>
-      </ul>
-    </section>
+        <section aria-labelledby="research">
+          <h2>Research</h2>
+          <ul class="paper-list">
+            <li>
+              <div class="paper-title">Rent Control and Housing: Evidence from New Jersey</div>
+              <div class="paper-meta">Working Paper, 2023</div>
+              <div class="paper-links">
+                <a href="./jmp_keshawarz.pdf">PDF</a> | <a href="#">Abstract</a>
+              </div>
+            </li>
+            <li>
+              <div class="paper-title">[Placeholder] The Political Economy of Labor Supply under Policy Shocks</div>
+              <div class="paper-meta">Work in Progress</div>
+            </li>
+            <li>
+              <div class="paper-title">[Placeholder] Measuring Inequality Dynamics Across Local Labor Markets</div>
+              <div class="paper-meta">Under Review</div>
+            </li>
+          </ul>
+        </section>
 
-    <section aria-labelledby="teaching">
-      <h2 id="teaching">Teaching</h2>
-      <p>Available for undergraduate and graduate teaching in microeconomics and econometrics.</p>
-    </section>
+        <section aria-labelledby="teaching">
+          <h2>Teaching</h2>
+          <ul class="paper-list">
+            <li>
+              <div class="paper-title">Microeconomic Theory (ECON 300)</div>
+              <div class="paper-meta">UH West Oʻahu | Fall 2024</div>
+            </li>
+            <li>
+              <div class="paper-title">Econometrics and Data Analysis (ECON 400)</div>
+              <div class="paper-meta">UH West Oʻahu | Spring 2024</div>
+            </li>
+          </ul>
+        </section>
+      </main>
 
-    <section aria-labelledby="contact">
-      <h2 id="contact">Contact</h2>
-      <p>Email: <a href="mailto:okeshawarz@gmail.com">okeshawarz@gmail.com</a></p>
-      <p>Job Market Paper: <a href="./jmp_keshawarz.pdf">Download job market paper (PDF)</a></p>
-    </section>
-  </main>
+      <!-- Sidebar Area -->
+      <aside class="sidebar">
+        
+        <div class="consulting-badge">
+          <h3>Data & Consulting</h3>
+          <p>
+            Available for consulting and data science engagements. Expertise in <strong>causal inference, econometric forecasting, R, and Python.</strong> Let's talk about extracting actionable insights from your data.
+          </p>
+        </div>
+
+        <h2>Contact</h2>
+        <ul class="contact-list">
+          <li><a href="mailto:okeshawarz@gmail.com">okeshawarz@gmail.com</a></li>
+          <li><a href="#">Curriculum Vitae</a></li>
+          <li><a href="#">Google Scholar</a></li>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
 </body>
 </html>
