@@ -6,8 +6,8 @@
   <title>Osman Keshawarz | Political Economy & Data</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Using Playfair Display for that heavy, editorial Jacobin serif, and Inter for clean data/tech sans-serif -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <!-- Jost for modernist headings, Crimson Pro for authoritative editorial serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@700;800;900&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-color: #f7f6f2; /* Newsprint off-white */
@@ -24,7 +24,7 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Crimson Pro', serif;
       background-color: var(--bg-color);
       color: var(--text-main);
       line-height: 1.6;
@@ -59,7 +59,7 @@
     }
 
     .site-title {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Jost', sans-serif;
       font-size: 3.5rem;
       font-weight: 900;
       line-height: 1.1;
@@ -68,8 +68,8 @@
     }
 
     .site-subtitle {
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
+      font-family: 'Jost', sans-serif;
+      font-weight: 700;
       font-size: 1.25rem;
       color: var(--accent-red);
       text-transform: uppercase;
@@ -99,25 +99,27 @@
 
     /* Typography for sections */
     h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 700;
+      font-family: 'Jost', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
       border-bottom: var(--border-thin);
       padding-bottom: 0.5rem;
       margin-bottom: 1.5rem;
       color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     h3 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Jost', sans-serif;
       font-size: 1.2rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 0.25rem;
     }
 
     p {
-      margin-bottom: 1rem;
-      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.2rem; /* Slightly larger for Crimson Pro readability */
     }
 
     /* Lists */
@@ -131,20 +133,23 @@
     }
 
     .paper-title {
+      font-family: 'Crimson Pro', serif;
       font-weight: 600;
-      font-size: 1.15rem;
+      font-size: 1.3rem;
     }
 
     .paper-meta {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: #444;
     }
 
     .paper-links {
-      font-size: 0.9rem;
-      margin-top: 0.3rem;
-      font-weight: 500;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+      font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     /* Sidebar / Consulting */
@@ -243,11 +248,10 @@
       <!-- Sidebar Area -->
       <aside class="sidebar">
         
-        <img src="placeholder.jpg" alt="Osman Keshawarz" class="headshot">
+        <img src="profile.jpg" alt="Osman Keshawarz" class="headshot">
 
         <h2>Contact</h2>
         <ul class="contact-list">
-          <li><a href="mailto:okeshawarz@gmail.com">okeshawarz@gmail.com</a></li>
           <li><a href="#">Curriculum Vitae</a></li>
           <li><a href="#">Google Scholar</a></li>
           <li><a href="#">GitHub</a></li>
